@@ -19,6 +19,7 @@ struct ErrorPopupIcon: View {
             }
             .popover(isPresented: $showError) {
                 Text(error?.localizedDescription ?? "")
+                    .padding()
             }
     }
 }

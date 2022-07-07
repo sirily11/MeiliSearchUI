@@ -22,6 +22,9 @@ struct TaskItem: View {
                 }
                 Text("\(task.type) - \(task.status.stringValue) - \(task.duration ?? "")")
                     .font(.caption2)
+                Text("\(task.enqueuedAt)")
+                    .font(.caption2)
+                
             }
 
         }

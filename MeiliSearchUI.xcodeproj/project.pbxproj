@@ -61,6 +61,8 @@
 		CD4AEB7C2876B735003826A3 /* SwiftJSONView in Frameworks */ = {isa = PBXBuildFile; productRef = CD4AEB7B2876B735003826A3 /* SwiftJSONView */; };
 		CD4AEB7E2876C2F3003826A3 /* DocumentListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB7D2876C2F3003826A3 /* DocumentListItem.swift */; };
 		CD4AEB7F2876C2F3003826A3 /* DocumentListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB7D2876C2F3003826A3 /* DocumentListItem.swift */; };
+		CD4AEB812876D358003826A3 /* DocumentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB802876D358003826A3 /* DocumentForm.swift */; };
+		CD4AEB822876D358003826A3 /* DocumentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB802876D358003826A3 /* DocumentForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,7 @@
 		CD01883B287671CD00A636AC /* Tests_JSONDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_JSONDecoding.swift; sourceTree = "<group>"; };
 		CD01885828768ECD00A636AC /* MeiliSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeiliSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD4AEB7D2876C2F3003826A3 /* DocumentListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListItem.swift; sourceTree = "<group>"; };
+		CD4AEB802876D358003826A3 /* DocumentForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,7 @@
 			children = (
 				CD0187FC28766FF200A636AC /* DocumentList.swift */,
 				CD4AEB7D2876C2F3003826A3 /* DocumentListItem.swift */,
+				CD4AEB802876D358003826A3 /* DocumentForm.swift */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -433,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4AEB812876D358003826A3 /* DocumentForm.swift in Sources */,
 				CD01882E28766FF200A636AC /* ErrorPopupIcon.swift in Sources */,
 				CD01882628766FF200A636AC /* IndexList.swift in Sources */,
 				CD01882A28766FF200A636AC /* IndexItem.swift in Sources */,
@@ -463,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4AEB822876D358003826A3 /* DocumentForm.swift in Sources */,
 				CD01882F28766FF200A636AC /* ErrorPopupIcon.swift in Sources */,
 				CD01882728766FF200A636AC /* IndexList.swift in Sources */,
 				CD01882B28766FF200A636AC /* IndexItem.swift in Sources */,

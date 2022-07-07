@@ -217,6 +217,23 @@ extension Indexes {
         }
     }
     
+    /**
+     Add documents
+     */
+    func addDocument(data: Data) async throws -> Task {
+        return try await withCheckedThrowingContinuation{ (continuation: CheckedContinuation<Task, FundationError>) in
+            addDocuments(documents: data) { result in
+                switch result {
+                case .success(let result):
+                    continuation.resume(returning: result)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+            
+        }
+    }
+    
     
 }
 

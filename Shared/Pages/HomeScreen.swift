@@ -18,6 +18,7 @@ struct HomeScreen: View {
         animation: .default)
     private var hosts: FetchedResults<Host>
     @State var showInfo = false
+    @State var showAddDocument = false
 
     var body: some View {
         NavigationView {
@@ -33,10 +34,14 @@ struct HomeScreen: View {
                 
                 if meilisearchModel.currentIndex != nil {
                     Button(action: {
-                      
+                      showAddDocument = true
                     }, label: {
                         Image(systemSymbol: .plus)
                     })
+                    .popover(isPresented: $showAddDocument) {
+                        DocumentForm(isPresented: $showAddDocument)
+                            .frame(width: 500, height: 500)
+                    }
                 }
                 
                 if meilisearchModel.currentHost != nil {
@@ -47,7 +52,7 @@ struct HomeScreen: View {
                     })
                         .popover(isPresented: $showInfo) {
                             TaskList()
-                                .frame(minWidth: 300)
+                                .frame(width: 400, height: 400)
                         }
                     }
                 

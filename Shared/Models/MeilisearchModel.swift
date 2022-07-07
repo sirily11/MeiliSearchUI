@@ -208,9 +208,31 @@ class MeilisearchModel: ObservableObject {
         self.searchResults = results
     }
     
+    /**
+     Add document from url
+     */
     @MainActor
-    func addDocument(){
-        
+    func addDocument(url: URL) async throws {
+        let content = try String(contentsOfFile: url.path)
+        try await addDocument(content: content)
     }
+    
+    /**
+     Add document from content
+     */
+    @MainActor
+    func addDocument(content: String) async throws {
+        guard let meilisearchClient = meilisearchClient else {
+            return
+        }
+
+        guard let currentIndex = currentIndex else {
+            return
+        }
+        let task = try await meilisearchClient.index(currentIndex.uid).addDocument(data: content.data(using: .utf8)!)
+        let _ = try await meilisearchClient.waitForTask(task: task)
+        try await fetchStats()
+    }
+    
     
 }

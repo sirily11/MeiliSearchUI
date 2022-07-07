@@ -33,12 +33,6 @@ struct DocumentList: View {
     
     var body: some View {
         VStack{
-            if let error = error {
-                Spacer()
-                ErrorLabel(error: error)
-                Spacer()
-            }
-            
             if let stats = meilisearchModel.stats {
                 HStack {
                     Text("Number of documents")
@@ -53,7 +47,10 @@ struct DocumentList: View {
                 }
                 Spacer()
             }
-            
+            if let error = error {
+                ErrorLabel(error: error)
+                Spacer()
+            }
             if let columns = meilisearchModel.stats?.columns {
                 if let searchResults = meilisearchModel.searchResults {
                     List {
@@ -98,7 +95,15 @@ struct DocumentList: View {
         .onDrop(of: ["public.file-url"], isTargeted: $dragOver) { providers -> Bool in
             providers.first?.loadDataRepresentation(forTypeIdentifier: "public.file-url", completionHandler: { (data, error) in
                if let data = data, let path = NSString(data: data, encoding: 4), let url = URL(string: path as String) {
-                   print(url)
+                   DispatchQueue.main.async {
+                           SwiftUI.Task {
+                               do {
+                                   try await meilisearchModel.addDocument(url: url)
+                               } catch let error {
+                                   self.error = error
+                               }
+                           }
+                   }
                }
            })
            return true
