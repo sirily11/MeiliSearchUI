@@ -35,19 +35,13 @@ struct IndexSettings: View {
                 
                 
                 if let _ = meilisearchModel.currentSettings {
-                    HStack {
-                        Form {
-                            SettingsList(title: "Ranking rules", settings: $rankingRules)
-                            SettingsList(title: "filterableAttributes",settings: $filterableAttributes)
-                            SettingsList(title: "SearchableAttributes",settings: $searchableAttributes)
-                            SettingsList(title: "DisplayedAttributes",settings: $displayedAttributes)
-                        }
+                    TabView {
+                        SettingsList(title: "Ranking rules", settings: $rankingRules)
+                        SettingsList(title: "Filterable Attributes",settings: $filterableAttributes)
+                        SettingsList(title: "Searchable Attributes",settings: $searchableAttributes)
+                        SettingsList(title: "Displayed Attributes",settings: $displayedAttributes)
                     }
                     Spacer()
-                }
-                Spacer()
-                if loading {
-                    ProgressView()
                 }
                 Spacer()
                 
@@ -67,7 +61,7 @@ struct IndexSettings: View {
         }
         .task{
             withAnimation{
-                loading = true
+                meilisearchModel.isLoading = true
             }
             do {
                try await meilisearchModel.fetchSettings()
@@ -81,7 +75,7 @@ struct IndexSettings: View {
                 self.error = error
             }
             withAnimation{
-                loading = false
+                meilisearchModel.isLoading = false
             }
         }
         .navigationTitle("Settings")

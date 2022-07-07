@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "598A440B-E167-4522-91FF-B36F40F41426"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C956A73-B80C-442E-A50A-AAFD2171B527"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tests macOS/Tests_JSONDecoding.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "Tests_BsonDecoding"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9C956A73-B80C-442E-A50A-AAFD2171B527 - f505e8140c1d663"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tests_macOS.Tests_BsonDecoding.__allocating_init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; Tests_macOS.Tests_BsonDecoding"
+                  moduleName = "Tests macOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirily11/Desktop/MeiliSearchUI/Tests%20macOS/Tests_JSONDecoding.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "9C956A73-B80C-442E-A50A-AAFD2171B527 - bd81d092d32cf250"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tests_macOS.Tests_BsonDecoding.init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; Tests_macOS.Tests_BsonDecoding"
+                  moduleName = "Tests macOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirily11/Desktop/MeiliSearchUI/Tests%20macOS/Tests_JSONDecoding.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "9C956A73-B80C-442E-A50A-AAFD2171B527 - 909f386806871169"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tests_macOS.Tests_BsonDecoding.__allocating_init(selector: ObjectiveC.Selector) -&gt; Tests_macOS.Tests_BsonDecoding"
+                  moduleName = "Tests macOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirily11/Desktop/MeiliSearchUI/Tests%20macOS/Tests_JSONDecoding.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "9C956A73-B80C-442E-A50A-AAFD2171B527 - 20d4b7819212f350"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tests_macOS.Tests_BsonDecoding.init(selector: ObjectiveC.Selector) -&gt; Tests_macOS.Tests_BsonDecoding"
+                  moduleName = "Tests macOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirily11/Desktop/MeiliSearchUI/Tests%20macOS/Tests_JSONDecoding.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "9C956A73-B80C-442E-A50A-AAFD2171B527 - 2f1c4b4c804fec80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tests_macOS.Tests_BsonDecoding.__allocating_init() -&gt; Tests_macOS.Tests_BsonDecoding"
+                  moduleName = "Tests macOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirily11/Desktop/MeiliSearchUI/Tests%20macOS/Tests_JSONDecoding.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "9C956A73-B80C-442E-A50A-AAFD2171B527 - b537b1d05cbe4eb3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tests_macOS.Tests_BsonDecoding.init() -&gt; Tests_macOS.Tests_BsonDecoding"
+                  moduleName = "Tests macOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirily11/Desktop/MeiliSearchUI/Tests%20macOS/Tests_JSONDecoding.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "9C956A73-B80C-442E-A50A-AAFD2171B527 - 66db25ce2eaf5b62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tests_macOS.Tests_BsonDecoding.__deallocating_deinit"
+                  moduleName = "Tests macOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirily11/Desktop/MeiliSearchUI/Tests%20macOS/Tests_JSONDecoding.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

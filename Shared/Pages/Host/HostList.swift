@@ -23,7 +23,7 @@ struct HostList: View {
                 HostItem(host: host)
             }
         }
-        .frame(minWidth: 200)
+        .frame(minWidth: 300)
         .contextMenu{
             Button("Add Item") {
                 showAddForm = true

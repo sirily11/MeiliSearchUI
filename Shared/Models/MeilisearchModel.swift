@@ -13,16 +13,19 @@ import SwiftUI
 
 class MeilisearchModel: ObservableObject {
     var currentHost: Host?
-    private var currentIndex: Index?
+    var currentIndex: Index?
     private let context = PersistenceController.shared.container.viewContext
     
     
     private var meilisearchClient: MeiliSearch?
     
+    @Published var isLoading = false
+    
     @Published var indexes: [Index] = []
     @Published var currentSettings: SettingResult?
     @Published var tasks: [Task] = []
     @Published var stats: Stat?
+    @Published var searchResults: SearchResult<Document>?
     
     /**
      Set current host
@@ -187,4 +190,27 @@ class MeilisearchModel: ObservableObject {
             }
         }
     }
+    
+    /**
+     Fetching settings by index
+     */
+    @MainActor
+    func search(keyword: String) async throws{
+        guard let meilisearchClient = meilisearchClient else {
+            return
+        }
+
+        guard let currentIndex = currentIndex else {
+            return
+        }
+        
+        let results = try await meilisearchClient.index(currentIndex.uid).search(.query(keyword))
+        self.searchResults = results
+    }
+    
+    @MainActor
+    func addDocument(){
+        
+    }
+    
 }

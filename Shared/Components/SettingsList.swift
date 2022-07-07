@@ -51,11 +51,14 @@ struct SettingsList: View {
             List(settings, id: \.self, selection: $selectKeeper) { value in
                 Text(value)
             }
-            .listStyle(.bordered(alternatesRowBackgrounds: true))
-            .frame(minHeight: 100, maxHeight: 200)
+            .frame(minHeight: 500, maxHeight: 500)
             .onDeleteCommand{
               
             }
+        }
+        .padding()
+        .tabItem{
+            Label(title, systemSymbol: .return)
         }
         
     }

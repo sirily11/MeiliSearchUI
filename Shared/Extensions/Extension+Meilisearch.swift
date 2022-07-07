@@ -9,6 +9,7 @@ import Foundation
 import MeiliSearch
 
 
+//MARK: MeiliSearch
 extension MeiliSearch {
     func getTasks() async throws -> [Task]{
         return try await withCheckedThrowingContinuation{ (continuation: CheckedContinuation<[Task], FundationError>) in
@@ -135,6 +136,7 @@ extension MeiliSearch {
     }
 }
 
+//MARK: Indexes
 extension Indexes {
     func getTasks() async throws -> [Task]{
         return try await withCheckedThrowingContinuation{ (continuation: CheckedContinuation<[Task], FundationError>) in
@@ -149,14 +151,14 @@ extension Indexes {
         }
     }
     
-    func search(_ keyword: SearchParameters) async throws -> [DocumentColumn]{
-        typealias MeiliResult = Result<SearchResult<DocumentColumn>, Swift.Error>
+    func search(_ keyword: SearchParameters) async throws -> SearchResult<Document>{
+        typealias MeiliResult = Result<SearchResult<Document>, Swift.Error>
         
-        return try await withCheckedThrowingContinuation{ (continuation: CheckedContinuation<[DocumentColumn], FundationError>) in
+        return try await withCheckedThrowingContinuation{ (continuation: CheckedContinuation<SearchResult<Document>, FundationError>) in
             search(keyword){ (result: MeiliResult) in
                 switch result {
                 case .success(let results):
-                    continuation.resume(returning: results.hits)
+                    continuation.resume(returning: results)
                 case .failure(let error):
                     continuation.resume(throwing: error)
                 }
@@ -218,6 +220,7 @@ extension Indexes {
     
 }
 
+// MARK: SettingResult
 extension SettingResult {
     /**
      Get settings object from setting result
@@ -229,6 +232,8 @@ extension SettingResult {
     }
 }
 
+
+//MARK: Task
 extension Task {
     
     static func createTestData() -> Task{

@@ -27,6 +27,18 @@ struct HomeScreen: View {
         }
         .toolbar{
             ToolbarItemGroup {
+                if meilisearchModel.isLoading {
+                    ProgressView()
+                }
+                
+                if meilisearchModel.currentIndex != nil {
+                    Button(action: {
+                      
+                    }, label: {
+                        Image(systemSymbol: .plus)
+                    })
+                }
+                
                 if meilisearchModel.currentHost != nil {
                     Button(action: {
                         showInfo = true
@@ -37,7 +49,8 @@ struct HomeScreen: View {
                             TaskList()
                                 .frame(minWidth: 300)
                         }
-                    }                    
+                    }
+                
             }
         }
     }

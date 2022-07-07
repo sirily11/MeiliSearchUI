@@ -36,6 +36,7 @@ struct IndexList: View {
             }
             
         }
+        .frame(minWidth: 400)
         .contextMenu{
             Button("Add a new index") {
                 isPresented = true

@@ -7,31 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD0187BE28766F4000A636AC /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187BD28766F4000A636AC /* Tests_iOS.swift */; };
-		CD0187C028766F4000A636AC /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187BF28766F4000A636AC /* Tests_iOSLaunchTests.swift */; };
-		CD0187CA28766F4000A636AC /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187C928766F4000A636AC /* Tests_macOS.swift */; };
-		CD0187CC28766F4000A636AC /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187CB28766F4000A636AC /* Tests_macOSLaunchTests.swift */; };
 		CD0187CD28766F4000A636AC /* MeiliSearchUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD0187A228766F3F00A636AC /* MeiliSearchUI.xcdatamodeld */; };
 		CD0187CE28766F4000A636AC /* MeiliSearchUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD0187A228766F3F00A636AC /* MeiliSearchUI.xcdatamodeld */; };
 		CD0187CF28766F4000A636AC /* MeiliSearchUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187A428766F3F00A636AC /* MeiliSearchUIApp.swift */; };
 		CD0187D028766F4000A636AC /* MeiliSearchUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187A428766F3F00A636AC /* MeiliSearchUIApp.swift */; };
-		CD0187D128766F4000A636AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187A528766F3F00A636AC /* ContentView.swift */; };
-		CD0187D228766F4000A636AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187A528766F3F00A636AC /* ContentView.swift */; };
 		CD0187D328766F4000A636AC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187A628766F3F00A636AC /* Persistence.swift */; };
 		CD0187D428766F4000A636AC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187A628766F3F00A636AC /* Persistence.swift */; };
 		CD0187D528766F4000A636AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0187A728766F4000A636AC /* Assets.xcassets */; };
 		CD0187D628766F4000A636AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0187A728766F4000A636AC /* Assets.xcassets */; };
+		CD0187EA28766F8200A636AC /* MeiliSearch in Frameworks */ = {isa = PBXBuildFile; productRef = CD0187E928766F8200A636AC /* MeiliSearch */; };
+		CD0187ED28766F9C00A636AC /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = CD0187EC28766F9C00A636AC /* SFSafeSymbols */; };
+		CD01880C28766FF200A636AC /* Extension+Meilisearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187EF28766FF200A636AC /* Extension+Meilisearch.swift */; };
+		CD01880D28766FF200A636AC /* Extension+Meilisearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187EF28766FF200A636AC /* Extension+Meilisearch.swift */; };
+		CD01881028766FF200A636AC /* Extension+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187F128766FF200A636AC /* Extension+Set.swift */; };
+		CD01881128766FF200A636AC /* Extension+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187F128766FF200A636AC /* Extension+Set.swift */; };
+		CD01881228766FF200A636AC /* MeilisearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187F328766FF200A636AC /* MeilisearchModel.swift */; };
+		CD01881328766FF200A636AC /* MeilisearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187F328766FF200A636AC /* MeilisearchModel.swift */; };
+		CD01881428766FF200A636AC /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187F628766FF200A636AC /* Document.swift */; };
+		CD01881528766FF200A636AC /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187F628766FF200A636AC /* Document.swift */; };
+		CD01881628766FF200A636AC /* HostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187F828766FF200A636AC /* HostList.swift */; };
+		CD01881728766FF200A636AC /* HostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187F828766FF200A636AC /* HostList.swift */; };
+		CD01881828766FF200A636AC /* HostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187F928766FF200A636AC /* HostForm.swift */; };
+		CD01881928766FF200A636AC /* HostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187F928766FF200A636AC /* HostForm.swift */; };
+		CD01881A28766FF200A636AC /* HostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187FA28766FF200A636AC /* HostItem.swift */; };
+		CD01881B28766FF200A636AC /* HostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187FA28766FF200A636AC /* HostItem.swift */; };
+		CD01881C28766FF200A636AC /* DocumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187FC28766FF200A636AC /* DocumentList.swift */; };
+		CD01881D28766FF200A636AC /* DocumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187FC28766FF200A636AC /* DocumentList.swift */; };
+		CD01881E28766FF200A636AC /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187FD28766FF200A636AC /* HomeScreen.swift */; };
+		CD01881F28766FF200A636AC /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187FD28766FF200A636AC /* HomeScreen.swift */; };
+		CD01882028766FF200A636AC /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187FF28766FF200A636AC /* TaskList.swift */; };
+		CD01882128766FF200A636AC /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0187FF28766FF200A636AC /* TaskList.swift */; };
+		CD01882228766FF200A636AC /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880028766FF200A636AC /* TaskItem.swift */; };
+		CD01882328766FF200A636AC /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880028766FF200A636AC /* TaskItem.swift */; };
+		CD01882428766FF200A636AC /* IndexSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880228766FF200A636AC /* IndexSettings.swift */; };
+		CD01882528766FF200A636AC /* IndexSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880228766FF200A636AC /* IndexSettings.swift */; };
+		CD01882628766FF200A636AC /* IndexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880328766FF200A636AC /* IndexList.swift */; };
+		CD01882728766FF200A636AC /* IndexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880328766FF200A636AC /* IndexList.swift */; };
+		CD01882828766FF200A636AC /* IndexForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880428766FF200A636AC /* IndexForm.swift */; };
+		CD01882928766FF200A636AC /* IndexForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880428766FF200A636AC /* IndexForm.swift */; };
+		CD01882A28766FF200A636AC /* IndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880528766FF200A636AC /* IndexItem.swift */; };
+		CD01882B28766FF200A636AC /* IndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880528766FF200A636AC /* IndexItem.swift */; };
+		CD01882C28766FF200A636AC /* SettingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880728766FF200A636AC /* SettingsList.swift */; };
+		CD01882D28766FF200A636AC /* SettingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880728766FF200A636AC /* SettingsList.swift */; };
+		CD01882E28766FF200A636AC /* ErrorPopupIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880828766FF200A636AC /* ErrorPopupIcon.swift */; };
+		CD01882F28766FF200A636AC /* ErrorPopupIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880828766FF200A636AC /* ErrorPopupIcon.swift */; };
+		CD01883028766FF200A636AC /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880928766FF200A636AC /* ErrorLabel.swift */; };
+		CD01883128766FF200A636AC /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880928766FF200A636AC /* ErrorLabel.swift */; };
+		CD01883228766FF200A636AC /* MeilisearchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880B28766FF200A636AC /* MeilisearchError.swift */; };
+		CD01883328766FF200A636AC /* MeilisearchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01880B28766FF200A636AC /* MeilisearchError.swift */; };
+		CD0188452876790D00A636AC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CD0188442876790D00A636AC /* SwiftyJSON */; };
+		CD01884D28767CD700A636AC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CD01884C28767CD700A636AC /* SwiftyJSON */; };
+		CD01886128768ED200A636AC /* Tests_JSONDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01883B287671CD00A636AC /* Tests_JSONDecoding.swift */; };
+		CD4AEB7C2876B735003826A3 /* SwiftJSONView in Frameworks */ = {isa = PBXBuildFile; productRef = CD4AEB7B2876B735003826A3 /* SwiftJSONView */; };
+		CD4AEB7E2876C2F3003826A3 /* DocumentListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB7D2876C2F3003826A3 /* DocumentListItem.swift */; };
+		CD4AEB7F2876C2F3003826A3 /* DocumentListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB7D2876C2F3003826A3 /* DocumentListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CD0187BA28766F4000A636AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD01879D28766F3F00A636AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD0187AB28766F4000A636AC;
-			remoteInfo = "MeiliSearchUI (iOS)";
-		};
-		CD0187C628766F4000A636AC /* PBXContainerItemProxy */ = {
+		CD01885C28768ECD00A636AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD01879D28766F3F00A636AC /* Project object */;
 			proxyType = 1;
@@ -43,18 +76,33 @@
 /* Begin PBXFileReference section */
 		CD0187A328766F3F00A636AC /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		CD0187A428766F3F00A636AC /* MeiliSearchUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeiliSearchUIApp.swift; sourceTree = "<group>"; };
-		CD0187A528766F3F00A636AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CD0187A628766F3F00A636AC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		CD0187A728766F4000A636AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD0187AC28766F4000A636AC /* MeiliSearchUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeiliSearchUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0187B228766F4000A636AC /* MeiliSearchUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeiliSearchUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0187B428766F4000A636AC /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		CD0187B928766F4000A636AC /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD0187BD28766F4000A636AC /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
-		CD0187BF28766F4000A636AC /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
-		CD0187C528766F4000A636AC /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD0187C928766F4000A636AC /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
-		CD0187CB28766F4000A636AC /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		CD0187EF28766FF200A636AC /* Extension+Meilisearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+Meilisearch.swift"; sourceTree = "<group>"; };
+		CD0187F128766FF200A636AC /* Extension+Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+Set.swift"; sourceTree = "<group>"; };
+		CD0187F328766FF200A636AC /* MeilisearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeilisearchModel.swift; sourceTree = "<group>"; };
+		CD0187F628766FF200A636AC /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		CD0187F828766FF200A636AC /* HostList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostList.swift; sourceTree = "<group>"; };
+		CD0187F928766FF200A636AC /* HostForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostForm.swift; sourceTree = "<group>"; };
+		CD0187FA28766FF200A636AC /* HostItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostItem.swift; sourceTree = "<group>"; };
+		CD0187FC28766FF200A636AC /* DocumentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentList.swift; sourceTree = "<group>"; };
+		CD0187FD28766FF200A636AC /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		CD0187FF28766FF200A636AC /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		CD01880028766FF200A636AC /* TaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		CD01880228766FF200A636AC /* IndexSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexSettings.swift; sourceTree = "<group>"; };
+		CD01880328766FF200A636AC /* IndexList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexList.swift; sourceTree = "<group>"; };
+		CD01880428766FF200A636AC /* IndexForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexForm.swift; sourceTree = "<group>"; };
+		CD01880528766FF200A636AC /* IndexItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexItem.swift; sourceTree = "<group>"; };
+		CD01880728766FF200A636AC /* SettingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsList.swift; sourceTree = "<group>"; };
+		CD01880828766FF200A636AC /* ErrorPopupIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPopupIcon.swift; sourceTree = "<group>"; };
+		CD01880928766FF200A636AC /* ErrorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
+		CD01880B28766FF200A636AC /* MeilisearchError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeilisearchError.swift; sourceTree = "<group>"; };
+		CD01883B287671CD00A636AC /* Tests_JSONDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_JSONDecoding.swift; sourceTree = "<group>"; };
+		CD01885828768ECD00A636AC /* MeiliSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeiliSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD4AEB7D2876C2F3003826A3 /* DocumentListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD0188452876790D00A636AC /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,17 +118,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD01884D28767CD700A636AC /* SwiftyJSON in Frameworks */,
+				CD0187ED28766F9C00A636AC /* SFSafeSymbols in Frameworks */,
+				CD0187EA28766F8200A636AC /* MeiliSearch in Frameworks */,
+				CD4AEB7C2876B735003826A3 /* SwiftJSONView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD0187B628766F4000A636AC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD0187C228766F4000A636AC /* Frameworks */ = {
+		CD01885528768ECD00A636AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -94,17 +140,22 @@
 			children = (
 				CD0187A128766F3F00A636AC /* Shared */,
 				CD0187B328766F4000A636AC /* macOS */,
-				CD0187BC28766F4000A636AC /* Tests iOS */,
-				CD0187C828766F4000A636AC /* Tests macOS */,
+				CD01885928768ECD00A636AC /* MeiliSearchUITests */,
 				CD0187AD28766F4000A636AC /* Products */,
+				CD01883D2876723100A636AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		CD0187A128766F3F00A636AC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CD01884828767A3500A636AC /* Types */,
+				CD01880628766FF200A636AC /* Components */,
+				CD01880A28766FF200A636AC /* Errors */,
+				CD0187EE28766FF200A636AC /* Extensions */,
+				CD0187F228766FF200A636AC /* Models */,
+				CD0187F428766FF200A636AC /* Pages */,
 				CD0187A428766F3F00A636AC /* MeiliSearchUIApp.swift */,
-				CD0187A528766F3F00A636AC /* ContentView.swift */,
 				CD0187A628766F3F00A636AC /* Persistence.swift */,
 				CD0187A728766F4000A636AC /* Assets.xcassets */,
 				CD0187A228766F3F00A636AC /* MeiliSearchUI.xcdatamodeld */,
@@ -117,8 +168,7 @@
 			children = (
 				CD0187AC28766F4000A636AC /* MeiliSearchUI.app */,
 				CD0187B228766F4000A636AC /* MeiliSearchUI.app */,
-				CD0187B928766F4000A636AC /* Tests iOS.xctest */,
-				CD0187C528766F4000A636AC /* Tests macOS.xctest */,
+				CD01885828768ECD00A636AC /* MeiliSearchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,22 +181,113 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
-		CD0187BC28766F4000A636AC /* Tests iOS */ = {
+		CD0187EE28766FF200A636AC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CD0187BD28766F4000A636AC /* Tests_iOS.swift */,
-				CD0187BF28766F4000A636AC /* Tests_iOSLaunchTests.swift */,
+				CD0187EF28766FF200A636AC /* Extension+Meilisearch.swift */,
+				CD0187F128766FF200A636AC /* Extension+Set.swift */,
 			);
-			path = "Tests iOS";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CD0187C828766F4000A636AC /* Tests macOS */ = {
+		CD0187F228766FF200A636AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CD0187C928766F4000A636AC /* Tests_macOS.swift */,
-				CD0187CB28766F4000A636AC /* Tests_macOSLaunchTests.swift */,
+				CD0187F328766FF200A636AC /* MeilisearchModel.swift */,
 			);
-			path = "Tests macOS";
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD0187F428766FF200A636AC /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				CD0187F728766FF200A636AC /* Host */,
+				CD0187FB28766FF200A636AC /* Document */,
+				CD0187FD28766FF200A636AC /* HomeScreen.swift */,
+				CD0187FE28766FF200A636AC /* Task */,
+				CD01880128766FF200A636AC /* Index */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		CD0187F728766FF200A636AC /* Host */ = {
+			isa = PBXGroup;
+			children = (
+				CD0187F828766FF200A636AC /* HostList.swift */,
+				CD0187F928766FF200A636AC /* HostForm.swift */,
+				CD0187FA28766FF200A636AC /* HostItem.swift */,
+			);
+			path = Host;
+			sourceTree = "<group>";
+		};
+		CD0187FB28766FF200A636AC /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				CD0187FC28766FF200A636AC /* DocumentList.swift */,
+				CD4AEB7D2876C2F3003826A3 /* DocumentListItem.swift */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		CD0187FE28766FF200A636AC /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				CD0187FF28766FF200A636AC /* TaskList.swift */,
+				CD01880028766FF200A636AC /* TaskItem.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		CD01880128766FF200A636AC /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				CD01880228766FF200A636AC /* IndexSettings.swift */,
+				CD01880328766FF200A636AC /* IndexList.swift */,
+				CD01880428766FF200A636AC /* IndexForm.swift */,
+				CD01880528766FF200A636AC /* IndexItem.swift */,
+			);
+			path = Index;
+			sourceTree = "<group>";
+		};
+		CD01880628766FF200A636AC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CD01880728766FF200A636AC /* SettingsList.swift */,
+				CD01880828766FF200A636AC /* ErrorPopupIcon.swift */,
+				CD01880928766FF200A636AC /* ErrorLabel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CD01880A28766FF200A636AC /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				CD01880B28766FF200A636AC /* MeilisearchError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		CD01883D2876723100A636AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD01884828767A3500A636AC /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				CD0187F628766FF200A636AC /* Document.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		CD01885928768ECD00A636AC /* MeiliSearchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD01883B287671CD00A636AC /* Tests_JSONDecoding.swift */,
+			);
+			path = MeiliSearchUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +306,9 @@
 			dependencies = (
 			);
 			name = "MeiliSearchUI (iOS)";
+			packageProductDependencies = (
+				CD0188442876790D00A636AC /* SwiftyJSON */,
+			);
 			productName = "MeiliSearchUI (iOS)";
 			productReference = CD0187AC28766F4000A636AC /* MeiliSearchUI.app */;
 			productType = "com.apple.product-type.application";
@@ -182,45 +326,33 @@
 			dependencies = (
 			);
 			name = "MeiliSearchUI (macOS)";
+			packageProductDependencies = (
+				CD0187E928766F8200A636AC /* MeiliSearch */,
+				CD0187EC28766F9C00A636AC /* SFSafeSymbols */,
+				CD01884C28767CD700A636AC /* SwiftyJSON */,
+				CD4AEB7B2876B735003826A3 /* SwiftJSONView */,
+			);
 			productName = "MeiliSearchUI (macOS)";
 			productReference = CD0187B228766F4000A636AC /* MeiliSearchUI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CD0187B828766F4000A636AC /* Tests iOS */ = {
+		CD01885728768ECD00A636AC /* MeiliSearchUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD0187DF28766F4000A636AC /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildConfigurationList = CD01885E28768ECD00A636AC /* Build configuration list for PBXNativeTarget "MeiliSearchUITests" */;
 			buildPhases = (
-				CD0187B528766F4000A636AC /* Sources */,
-				CD0187B628766F4000A636AC /* Frameworks */,
-				CD0187B728766F4000A636AC /* Resources */,
+				CD01885428768ECD00A636AC /* Sources */,
+				CD01885528768ECD00A636AC /* Frameworks */,
+				CD01885628768ECD00A636AC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CD0187BB28766F4000A636AC /* PBXTargetDependency */,
+				CD01885D28768ECD00A636AC /* PBXTargetDependency */,
 			);
-			name = "Tests iOS";
-			productName = "Tests iOS";
-			productReference = CD0187B928766F4000A636AC /* Tests iOS.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		CD0187C428766F4000A636AC /* Tests macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CD0187E228766F4000A636AC /* Build configuration list for PBXNativeTarget "Tests macOS" */;
-			buildPhases = (
-				CD0187C128766F4000A636AC /* Sources */,
-				CD0187C228766F4000A636AC /* Frameworks */,
-				CD0187C328766F4000A636AC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CD0187C728766F4000A636AC /* PBXTargetDependency */,
-			);
-			name = "Tests macOS";
-			productName = "Tests macOS";
-			productReference = CD0187C528766F4000A636AC /* Tests macOS.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = MeiliSearchUITests;
+			productName = MeiliSearchUITests;
+			productReference = CD01885828768ECD00A636AC /* MeiliSearchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -238,11 +370,7 @@
 					CD0187B128766F4000A636AC = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					CD0187B828766F4000A636AC = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = CD0187AB28766F4000A636AC;
-					};
-					CD0187C428766F4000A636AC = {
+					CD01885728768ECD00A636AC = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = CD0187B128766F4000A636AC;
 					};
@@ -257,14 +385,19 @@
 				Base,
 			);
 			mainGroup = CD01879C28766F3F00A636AC;
+			packageReferences = (
+				CD0187E828766F8100A636AC /* XCRemoteSwiftPackageReference "meilisearch-swift" */,
+				CD0187EB28766F9C00A636AC /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				CD0188432876790D00A636AC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				CD4AEB7A2876B735003826A3 /* XCRemoteSwiftPackageReference "SwiftJSONView" */,
+			);
 			productRefGroup = CD0187AD28766F4000A636AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				CD0187AB28766F4000A636AC /* MeiliSearchUI (iOS) */,
 				CD0187B128766F4000A636AC /* MeiliSearchUI (macOS) */,
-				CD0187B828766F4000A636AC /* Tests iOS */,
-				CD0187C428766F4000A636AC /* Tests macOS */,
+				CD01885728768ECD00A636AC /* MeiliSearchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -286,14 +419,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD0187B728766F4000A636AC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD0187C328766F4000A636AC /* Resources */ = {
+		CD01885628768ECD00A636AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -307,10 +433,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD01882E28766FF200A636AC /* ErrorPopupIcon.swift in Sources */,
+				CD01882628766FF200A636AC /* IndexList.swift in Sources */,
+				CD01882A28766FF200A636AC /* IndexItem.swift in Sources */,
+				CD01881228766FF200A636AC /* MeilisearchModel.swift in Sources */,
 				CD0187CF28766F4000A636AC /* MeiliSearchUIApp.swift in Sources */,
+				CD01881E28766FF200A636AC /* HomeScreen.swift in Sources */,
+				CD01882C28766FF200A636AC /* SettingsList.swift in Sources */,
+				CD01883028766FF200A636AC /* ErrorLabel.swift in Sources */,
+				CD4AEB7E2876C2F3003826A3 /* DocumentListItem.swift in Sources */,
+				CD01881A28766FF200A636AC /* HostItem.swift in Sources */,
+				CD01883228766FF200A636AC /* MeilisearchError.swift in Sources */,
+				CD01881028766FF200A636AC /* Extension+Set.swift in Sources */,
 				CD0187D328766F4000A636AC /* Persistence.swift in Sources */,
+				CD01882428766FF200A636AC /* IndexSettings.swift in Sources */,
+				CD01882028766FF200A636AC /* TaskList.swift in Sources */,
 				CD0187CD28766F4000A636AC /* MeiliSearchUI.xcdatamodeld in Sources */,
-				CD0187D128766F4000A636AC /* ContentView.swift in Sources */,
+				CD01881428766FF200A636AC /* Document.swift in Sources */,
+				CD01881C28766FF200A636AC /* DocumentList.swift in Sources */,
+				CD01882228766FF200A636AC /* TaskItem.swift in Sources */,
+				CD01881828766FF200A636AC /* HostForm.swift in Sources */,
+				CD01882828766FF200A636AC /* IndexForm.swift in Sources */,
+				CD01880C28766FF200A636AC /* Extension+Meilisearch.swift in Sources */,
+				CD01881628766FF200A636AC /* HostList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,43 +463,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD01882F28766FF200A636AC /* ErrorPopupIcon.swift in Sources */,
+				CD01882728766FF200A636AC /* IndexList.swift in Sources */,
+				CD01882B28766FF200A636AC /* IndexItem.swift in Sources */,
+				CD01881328766FF200A636AC /* MeilisearchModel.swift in Sources */,
 				CD0187D028766F4000A636AC /* MeiliSearchUIApp.swift in Sources */,
+				CD01881F28766FF200A636AC /* HomeScreen.swift in Sources */,
+				CD01882D28766FF200A636AC /* SettingsList.swift in Sources */,
+				CD01883128766FF200A636AC /* ErrorLabel.swift in Sources */,
+				CD4AEB7F2876C2F3003826A3 /* DocumentListItem.swift in Sources */,
+				CD01881B28766FF200A636AC /* HostItem.swift in Sources */,
+				CD01883328766FF200A636AC /* MeilisearchError.swift in Sources */,
+				CD01881128766FF200A636AC /* Extension+Set.swift in Sources */,
 				CD0187D428766F4000A636AC /* Persistence.swift in Sources */,
+				CD01882528766FF200A636AC /* IndexSettings.swift in Sources */,
+				CD01882128766FF200A636AC /* TaskList.swift in Sources */,
 				CD0187CE28766F4000A636AC /* MeiliSearchUI.xcdatamodeld in Sources */,
-				CD0187D228766F4000A636AC /* ContentView.swift in Sources */,
+				CD01881528766FF200A636AC /* Document.swift in Sources */,
+				CD01881D28766FF200A636AC /* DocumentList.swift in Sources */,
+				CD01882328766FF200A636AC /* TaskItem.swift in Sources */,
+				CD01881928766FF200A636AC /* HostForm.swift in Sources */,
+				CD01882928766FF200A636AC /* IndexForm.swift in Sources */,
+				CD01880D28766FF200A636AC /* Extension+Meilisearch.swift in Sources */,
+				CD01881728766FF200A636AC /* HostList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD0187B528766F4000A636AC /* Sources */ = {
+		CD01885428768ECD00A636AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD0187C028766F4000A636AC /* Tests_iOSLaunchTests.swift in Sources */,
-				CD0187BE28766F4000A636AC /* Tests_iOS.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD0187C128766F4000A636AC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD0187CC28766F4000A636AC /* Tests_macOSLaunchTests.swift in Sources */,
-				CD0187CA28766F4000A636AC /* Tests_macOS.swift in Sources */,
+				CD01886128768ED200A636AC /* Tests_JSONDecoding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CD0187BB28766F4000A636AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CD0187AB28766F4000A636AC /* MeiliSearchUI (iOS) */;
-			targetProxy = CD0187BA28766F4000A636AC /* PBXContainerItemProxy */;
-		};
-		CD0187C728766F4000A636AC /* PBXTargetDependency */ = {
+		CD01885D28768ECD00A636AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CD0187B128766F4000A636AC /* MeiliSearchUI (macOS) */;
-			targetProxy = CD0187C628766F4000A636AC /* PBXContainerItemProxy */;
+			targetProxy = CD01885C28768ECD00A636AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -542,6 +691,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -570,6 +720,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -585,82 +736,41 @@
 			};
 			name = Release;
 		};
-		CD0187E028766F4000A636AC /* Debug */ = {
+		CD01885F28768ECD00A636AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P9KK452K8P;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sirilee.Tests-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "MeiliSearchUI (iOS)";
-			};
-			name = Debug;
-		};
-		CD0187E128766F4000A636AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P9KK452K8P;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sirilee.Tests-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "MeiliSearchUI (iOS)";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		CD0187E328766F4000A636AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P9KK452K8P;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sirilee.Tests-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sirilee.MeiliSearchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "MeiliSearchUI (macOS)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeiliSearchUI.app/Contents/MacOS/MeiliSearchUI";
 			};
 			name = Debug;
 		};
-		CD0187E428766F4000A636AC /* Release */ = {
+		CD01886028768ECD00A636AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P9KK452K8P;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sirilee.Tests-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sirilee.MeiliSearchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "MeiliSearchUI (macOS)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeiliSearchUI.app/Contents/MacOS/MeiliSearchUI";
 			};
 			name = Release;
 		};
@@ -694,25 +804,79 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD0187DF28766F4000A636AC /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+		CD01885E28768ECD00A636AC /* Build configuration list for PBXNativeTarget "MeiliSearchUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD0187E028766F4000A636AC /* Debug */,
-				CD0187E128766F4000A636AC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CD0187E228766F4000A636AC /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD0187E328766F4000A636AC /* Debug */,
-				CD0187E428766F4000A636AC /* Release */,
+				CD01885F28768ECD00A636AC /* Debug */,
+				CD01886028768ECD00A636AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD0187E828766F8100A636AC /* XCRemoteSwiftPackageReference "meilisearch-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/meilisearch/meilisearch-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		CD0187EB28766F9C00A636AC /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
+			requirement = {
+				branch = stable;
+				kind = branch;
+			};
+		};
+		CD0188432876790D00A636AC /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		CD4AEB7A2876B735003826A3 /* XCRemoteSwiftPackageReference "SwiftJSONView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sirily11/SwiftJSONView";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD0187E928766F8200A636AC /* MeiliSearch */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0187E828766F8100A636AC /* XCRemoteSwiftPackageReference "meilisearch-swift" */;
+			productName = MeiliSearch;
+		};
+		CD0187EC28766F9C00A636AC /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0187EB28766F9C00A636AC /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+		CD0188442876790D00A636AC /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0188432876790D00A636AC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		CD01884C28767CD700A636AC /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0188432876790D00A636AC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		CD4AEB7B2876B735003826A3 /* SwiftJSONView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD4AEB7A2876B735003826A3 /* XCRemoteSwiftPackageReference "SwiftJSONView" */;
+			productName = SwiftJSONView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CD0187A228766F3F00A636AC /* MeiliSearchUI.xcdatamodeld */ = {

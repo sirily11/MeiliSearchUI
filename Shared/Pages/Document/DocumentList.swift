@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MeiliSearch
+import SwiftJSONView
 
 struct Person: Identifiable {
     let givenName: String
@@ -21,7 +22,6 @@ private var people = [
     Person(givenName: "Gita", familyName: "Kumar", emailAddress: "gitakumar@icloud.com")
 ]
 
-
 struct DocumentList: View {
     let index: Index
     
@@ -29,19 +29,13 @@ struct DocumentList: View {
     
     @State var searchText: String = ""
     @State var error: Error?
-    @State var loading = false
+    @State private var dragOver = false
     
     var body: some View {
         VStack{
             if let error = error {
                 Spacer()
                 ErrorLabel(error: error)
-                Spacer()
-            }
-            
-            if loading {
-                Spacer()
-                ProgressView()
                 Spacer()
             }
             
@@ -60,20 +54,58 @@ struct DocumentList: View {
                 Spacer()
             }
             
-            Table(people) {
-                   TableColumn("Given Name", value: \.givenName)
-                   TableColumn("Family Name", value: \.familyName)
-                   TableColumn("E-Mail Address", value: \.emailAddress)
-               }
+            if let columns = meilisearchModel.stats?.columns {
+                if let searchResults = meilisearchModel.searchResults {
+                    List {
+                        HStack {
+                            Text("Total: \(searchResults.nbHits)")
+                                .bold()
+                            Spacer()
+                            Text("Time: \(searchResults.processingTimeMs ?? 0) ms")
+                                .bold()
+                        }
+                        ForEach(searchResults.hits) { result in
+                            DocumentListItem(columns: columns, data: result)
+                        }
+                    }
+                    .listStyle(.inset(alternatesRowBackgrounds: true))
+                    .animation(.easeIn, value: 0.6)
+                }
+            }
         }
         .padding()
         .searchable(text: $searchText)
         .onChange(of: searchText) { text in
-           
+            SwiftUI.Task {
+                if text.isEmpty {
+                    return
+                }
+                
+                withAnimation{
+                    meilisearchModel.isLoading = true
+                }
+                
+                do {
+                    try await meilisearchModel.search(keyword: text)
+                } catch let error {
+                    self.error = error
+                }
+                withAnimation{
+                    meilisearchModel.isLoading = false
+                }
+            }
+        }
+        .onDrop(of: ["public.file-url"], isTargeted: $dragOver) { providers -> Bool in
+            providers.first?.loadDataRepresentation(forTypeIdentifier: "public.file-url", completionHandler: { (data, error) in
+               if let data = data, let path = NSString(data: data, encoding: 4), let url = URL(string: path as String) {
+                   print(url)
+               }
+           })
+           return true
         }
         .task {
             withAnimation {
-                loading = true
+                meilisearchModel.isLoading = true
             }
             do {
                 meilisearchModel.setIndex(index)
@@ -83,7 +115,7 @@ struct DocumentList: View {
             }
             
             withAnimation {
-                loading = false
+                meilisearchModel.isLoading = false
             }
         }
     }

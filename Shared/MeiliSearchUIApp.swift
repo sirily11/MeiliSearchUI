@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct MeiliSearchUIApp: App {
     let persistenceController = PersistenceController.shared
+    @StateObject var meilisearchModel = MeilisearchModel()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(meilisearchModel)
         }
     }
 }
