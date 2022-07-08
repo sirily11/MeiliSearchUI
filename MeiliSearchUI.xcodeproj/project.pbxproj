@@ -63,6 +63,8 @@
 		CD4AEB7F2876C2F3003826A3 /* DocumentListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB7D2876C2F3003826A3 /* DocumentListItem.swift */; };
 		CD4AEB812876D358003826A3 /* DocumentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB802876D358003826A3 /* DocumentForm.swift */; };
 		CD4AEB822876D358003826A3 /* DocumentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB802876D358003826A3 /* DocumentForm.swift */; };
+		CD4AEB842877EFBD003826A3 /* GeneralSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB832877EFBD003826A3 /* GeneralSettings.swift */; };
+		CD4AEB852877EFBD003826A3 /* GeneralSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB832877EFBD003826A3 /* GeneralSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,7 @@
 		CD01885828768ECD00A636AC /* MeiliSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeiliSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD4AEB7D2876C2F3003826A3 /* DocumentListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListItem.swift; sourceTree = "<group>"; };
 		CD4AEB802876D358003826A3 /* DocumentForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentForm.swift; sourceTree = "<group>"; };
+		CD4AEB832877EFBD003826A3 /* GeneralSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +252,7 @@
 				CD01880328766FF200A636AC /* IndexList.swift */,
 				CD01880428766FF200A636AC /* IndexForm.swift */,
 				CD01880528766FF200A636AC /* IndexItem.swift */,
+				CD4AEB832877EFBD003826A3 /* GeneralSettings.swift */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -456,6 +460,7 @@
 				CD0187CD28766F4000A636AC /* MeiliSearchUI.xcdatamodeld in Sources */,
 				CD01881428766FF200A636AC /* Document.swift in Sources */,
 				CD01881C28766FF200A636AC /* DocumentList.swift in Sources */,
+				CD4AEB842877EFBD003826A3 /* GeneralSettings.swift in Sources */,
 				CD01882228766FF200A636AC /* TaskItem.swift in Sources */,
 				CD01881828766FF200A636AC /* HostForm.swift in Sources */,
 				CD01882828766FF200A636AC /* IndexForm.swift in Sources */,
@@ -487,6 +492,7 @@
 				CD0187CE28766F4000A636AC /* MeiliSearchUI.xcdatamodeld in Sources */,
 				CD01881528766FF200A636AC /* Document.swift in Sources */,
 				CD01881D28766FF200A636AC /* DocumentList.swift in Sources */,
+				CD4AEB852877EFBD003826A3 /* GeneralSettings.swift in Sources */,
 				CD01882328766FF200A636AC /* TaskItem.swift in Sources */,
 				CD01881928766FF200A636AC /* HostForm.swift in Sources */,
 				CD01882928766FF200A636AC /* IndexForm.swift in Sources */,

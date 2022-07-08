@@ -26,6 +26,8 @@ class MeilisearchModel: ObservableObject {
     @Published var tasks: [Task] = []
     @Published var stats: Stat?
     @Published var searchResults: SearchResult<Document>?
+    @Published var documents: [Document] = []
+    
     
     /**
      Set current host
@@ -57,6 +59,27 @@ class MeilisearchModel: ObservableObject {
         try context.save()
     }
     
+    /**
+     Update Index
+     */
+    @MainActor
+    func updateIndex(primaryKey: String) async throws {
+        guard let meilisearchClient = meilisearchClient else {
+            return
+        }
+        
+        guard let currentIndex = currentIndex else {
+            return
+        }
+
+        
+        let task = try await meilisearchClient.index(currentIndex.uid).update(primaryKey: primaryKey)
+        let _ = try await meilisearchClient.waitForTask(task: task)
+        try await fetchIndexes()
+        withAnimation{
+            self.indexes = indexes
+        }
+    }
     
     /**
      Fetch all indexes
@@ -234,5 +257,20 @@ class MeilisearchModel: ObservableObject {
         try await fetchStats()
     }
     
+    /**
+     Add document from content
+     */
+    @MainActor
+    func fetchDocuments() async throws {
+        guard let meilisearchClient = meilisearchClient else {
+            return
+        }
+
+        guard let currentIndex = currentIndex else {
+            return
+        }
+        let documents = try await meilisearchClient.index(currentIndex.uid).getDocuments(options: GetParameters(limit: 2))
+        self.documents = documents
+    }
     
 }

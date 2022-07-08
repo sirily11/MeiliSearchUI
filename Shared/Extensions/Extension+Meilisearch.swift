@@ -183,6 +183,24 @@ extension Indexes {
         }
     }
     
+    
+    /**
+     Update index
+     */
+    func update(primaryKey: String) async throws -> Task {
+        return try await withCheckedThrowingContinuation{ (continuation: CheckedContinuation<Task, FundationError>) in
+            update(primaryKey: primaryKey) { result in
+                switch result {
+                case .success(let result):
+                    continuation.resume(returning: result)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+            
+        }
+    }
+    
     /**
      Get settings by index
      */
@@ -234,6 +252,22 @@ extension Indexes {
         }
     }
     
+    /**
+     Get documents
+     */
+    func getDocuments(options: GetParameters) async throws -> [Document] {
+        typealias MeiliResult = Result<[Document], Swift.Error>
+        return try await withCheckedThrowingContinuation{ (continuation: CheckedContinuation<[Document], FundationError>) in
+            getDocuments(options: options){ (result: MeiliResult) in
+                switch result {
+                case .success(let result):
+                    continuation.resume(returning: result)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
     
 }
 
