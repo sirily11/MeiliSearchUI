@@ -9,19 +9,6 @@ import SwiftUI
 import MeiliSearch
 import SwiftJSONView
 
-struct Person: Identifiable {
-    let givenName: String
-    let familyName: String
-    let emailAddress: String
-    let id = UUID()
-}
-private var people = [
-    Person(givenName: "Juan", familyName: "Chavez", emailAddress: "juanchavez@icloud.com"),
-    Person(givenName: "Mei", familyName: "Chen", emailAddress: "meichen@icloud.com"),
-    Person(givenName: "Tom", familyName: "Clark", emailAddress: "tomclark@icloud.com"),
-    Person(givenName: "Gita", familyName: "Kumar", emailAddress: "gitakumar@icloud.com")
-]
-
 struct DocumentList: View {
     let index: Index
     
@@ -32,6 +19,8 @@ struct DocumentList: View {
     @State private var dragOver = false
     @State var showSearchResult = false
     @State var selections: Set<Document> = Set()
+    
+    let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack{
@@ -115,21 +104,30 @@ struct DocumentList: View {
             })
             return true
         }
+        .onReceive(timer) { _ in
+            SwiftUI.Task {
+                await fetchData()
+            }
+        }
         .task {
-            withAnimation {
-                meilisearchModel.isLoading = true
-            }
-            do {
-                meilisearchModel.setIndex(index)
-                try await meilisearchModel.fetchStats()
-                try await meilisearchModel.fetchDocuments()
-            } catch let error {
-                self.error = error
-            }
-            
-            withAnimation {
-                meilisearchModel.isLoading = false
-            }
+            await fetchData()
+        }
+    }
+    
+    func fetchData() async {
+        withAnimation {
+            meilisearchModel.isLoading = true
+        }
+        do {
+            meilisearchModel.setIndex(index)
+            try await meilisearchModel.fetchStats()
+            try await meilisearchModel.fetchDocuments()
+        } catch let error {
+            self.error = error
+        }
+        
+        withAnimation {
+            meilisearchModel.isLoading = false
         }
     }
 }

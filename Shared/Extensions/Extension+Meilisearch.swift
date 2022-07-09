@@ -387,6 +387,8 @@ extension Stat {
         get {
             fieldDistribution.map { (key: String, value: Int) in
                 DocumentColumn(name: key, value: value)
+            }.sorted { prev, curr in
+                prev.name.compare(curr.name) == .orderedAscending
             }
         }
     }
