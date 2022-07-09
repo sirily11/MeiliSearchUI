@@ -31,6 +31,7 @@ struct DocumentList: View {
     @State var error: Error?
     @State private var dragOver = false
     @State var showSearchResult = false
+    @State var selections: Set<Document> = Set()
     
     var body: some View {
         VStack{
@@ -53,36 +54,26 @@ struct DocumentList: View {
                 Spacer()
             }
             
-            // show documents
-            if !showSearchResult {
-                if let columns = meilisearchModel.stats?.columns {
-                    List(meilisearchModel.documents) { document in
-                        DocumentListItem(columns: columns, data: document)
-                    }
-                    .listStyle(.inset(alternatesRowBackgrounds: true))
-                }
-            }
-            
             // show search results
-            if showSearchResult {
-                if let columns = meilisearchModel.stats?.columns {
-                    if let searchResults = meilisearchModel.searchResults {
-                        List {
-                            HStack {
-                                Text("Total: \(searchResults.nbHits)")
-                                    .bold()
-                                Spacer()
-                                Text("Time: \(searchResults.processingTimeMs ?? 0) ms")
-                                    .bold()
-                            }
-                            ForEach(searchResults.hits) { result in
-                                DocumentListItem(columns: columns, data: result)
-                            }
+            if let columns = meilisearchModel.stats?.columns {
+                List {
+                    if let searchResult = meilisearchModel.searchResults {
+                        HStack {
+                            Text("Total: \(searchResult.nbHits)")
+                                .bold()
+                            Spacer()
+                            Text("Time: \(searchResult.processingTimeMs ?? 0) ms")
+                                .bold()
                         }
-                        .listStyle(.inset(alternatesRowBackgrounds: true))
-                        .animation(.easeIn, value: 0.6)
+                    }
+                    
+                    ForEach(meilisearchModel.documents) { result in
+                        DocumentListItem(columns: columns, data: result, primaryKey: index.primaryKey ?? "")
                     }
                 }
+                .listStyle(.inset(alternatesRowBackgrounds: true))
+                .animation(.easeIn, value: 0.6)
+                
             }
         }
         .padding()
@@ -90,16 +81,12 @@ struct DocumentList: View {
         .onChange(of: searchText) { text in
             SwiftUI.Task {
                 if text.isEmpty {
-                    showSearchResult = false
                     return
                 }
-                
                 withAnimation{
                     meilisearchModel.isLoading = true
                 }
-                
                 do {
-                    showSearchResult = true
                     try await meilisearchModel.search(keyword: text)
                 } catch let error {
                     self.error = error

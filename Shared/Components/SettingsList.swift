@@ -53,7 +53,7 @@ struct SettingsList: View {
             }
             .frame(minHeight: 500, maxHeight: 500)
             .onDeleteCommand{
-              
+              remove()
             }
         }
         .padding()

@@ -23,7 +23,7 @@ extension MeiliSearch {
             }
         }
     }
-        
+    
     
     func allStats() async throws -> AllStats{
         return try await withCheckedThrowingContinuation{ (continuation: CheckedContinuation<AllStats, FundationError>) in
@@ -62,7 +62,11 @@ extension MeiliSearch {
             waitForTask(task: task) { result in
                 switch result {
                 case .success(let result):
-                    continuation.resume(returning: result)
+                    if let error = result.error {
+                        continuation.resume(throwing: MeilisearchError.taskFailed(type: error.type, reason: error.message))
+                    } else {
+                        continuation.resume(returning: result)
+                    }
                 case .failure(let error):
                     continuation.resume(throwing: error)
                 }
@@ -269,6 +273,24 @@ extension Indexes {
         }
     }
     
+    /**
+     Add documents
+     */
+    func deleteDocument(primaryKey: String) async throws -> Task {
+        return try await withCheckedThrowingContinuation{ (continuation: CheckedContinuation<Task, FundationError>) in
+            deleteDocument(primaryKey) { result in
+                switch result {
+                case .success(let result):
+                    continuation.resume(returning: result)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+            
+        }
+    }
+    
+    
 }
 
 // MARK: SettingResult
@@ -321,6 +343,23 @@ extension Task {
             return nil
         }
     }
+    
+    var percentageDescription: String? {
+        get {
+            if let details = details {
+                if let received = details.receivedDocuments {
+                    if let indexed = details.indexedDocuments {
+                        return "\(indexed)/\(received)"
+                    }
+                }
+                if let deleted = details.deletedDocuments  {
+                    return "\(deleted)"
+                }
+            }
+            
+            return nil
+        }
+    }
 }
 
 
@@ -329,14 +368,14 @@ extension Task.Status{
     var stringValue: String {
         get {
             switch self {
-                case .enqueued:
-                    return "enqueued"
-                case .failed:
-                    return "failed"
-                case .succeeded:
-                    return "succeed"
-                case .processing:
-                    return "processing"
+            case .enqueued:
+                return "enqueued"
+            case .failed:
+                return "failed"
+            case .succeeded:
+                return "succeed"
+            case .processing:
+                return "processing"
             }
         }
     }

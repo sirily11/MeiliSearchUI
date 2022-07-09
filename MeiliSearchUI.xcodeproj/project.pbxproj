@@ -65,6 +65,8 @@
 		CD4AEB822876D358003826A3 /* DocumentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB802876D358003826A3 /* DocumentForm.swift */; };
 		CD4AEB842877EFBD003826A3 /* GeneralSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB832877EFBD003826A3 /* GeneralSettings.swift */; };
 		CD4AEB852877EFBD003826A3 /* GeneralSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AEB832877EFBD003826A3 /* GeneralSettings.swift */; };
+		CD4AEB88287835E9003826A3 /* CodeEditTextView in Frameworks */ = {isa = PBXBuildFile; productRef = CD4AEB87287835E9003826A3 /* CodeEditTextView */; };
+		CD4AEB8A287835F8003826A3 /* CodeEditTextView in Frameworks */ = {isa = PBXBuildFile; productRef = CD4AEB89287835F8003826A3 /* CodeEditTextView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD0188452876790D00A636AC /* SwiftyJSON in Frameworks */,
+				CD4AEB88287835E9003826A3 /* CodeEditTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4AEB8A287835F8003826A3 /* CodeEditTextView in Frameworks */,
 				CD01884D28767CD700A636AC /* SwiftyJSON in Frameworks */,
 				CD0187ED28766F9C00A636AC /* SFSafeSymbols in Frameworks */,
 				CD0187EA28766F8200A636AC /* MeiliSearch in Frameworks */,
@@ -316,6 +320,7 @@
 			name = "MeiliSearchUI (iOS)";
 			packageProductDependencies = (
 				CD0188442876790D00A636AC /* SwiftyJSON */,
+				CD4AEB87287835E9003826A3 /* CodeEditTextView */,
 			);
 			productName = "MeiliSearchUI (iOS)";
 			productReference = CD0187AC28766F4000A636AC /* MeiliSearchUI.app */;
@@ -339,6 +344,7 @@
 				CD0187EC28766F9C00A636AC /* SFSafeSymbols */,
 				CD01884C28767CD700A636AC /* SwiftyJSON */,
 				CD4AEB7B2876B735003826A3 /* SwiftJSONView */,
+				CD4AEB89287835F8003826A3 /* CodeEditTextView */,
 			);
 			productName = "MeiliSearchUI (macOS)";
 			productReference = CD0187B228766F4000A636AC /* MeiliSearchUI.app */;
@@ -398,6 +404,7 @@
 				CD0187EB28766F9C00A636AC /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 				CD0188432876790D00A636AC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				CD4AEB7A2876B735003826A3 /* XCRemoteSwiftPackageReference "SwiftJSONView" */,
+				CD4AEB86287835E9003826A3 /* XCRemoteSwiftPackageReference "CodeEditTextView" */,
 			);
 			productRefGroup = CD0187AD28766F4000A636AC /* Products */;
 			projectDirPath = "";
@@ -860,6 +867,14 @@
 				kind = branch;
 			};
 		};
+		CD4AEB86287835E9003826A3 /* XCRemoteSwiftPackageReference "CodeEditTextView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CodeEditApp/CodeEditTextView";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -887,6 +902,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD4AEB7A2876B735003826A3 /* XCRemoteSwiftPackageReference "SwiftJSONView" */;
 			productName = SwiftJSONView;
+		};
+		CD4AEB87287835E9003826A3 /* CodeEditTextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD4AEB86287835E9003826A3 /* XCRemoteSwiftPackageReference "CodeEditTextView" */;
+			productName = CodeEditTextView;
+		};
+		CD4AEB89287835F8003826A3 /* CodeEditTextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD4AEB86287835E9003826A3 /* XCRemoteSwiftPackageReference "CodeEditTextView" */;
+			productName = CodeEditTextView;
 		};
 /* End XCSwiftPackageProductDependency section */
 

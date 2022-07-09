@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CodeEditTextView
 
 struct DocumentForm: View {
     @EnvironmentObject var meilisearchModel: MeilisearchModel
@@ -14,10 +15,15 @@ struct DocumentForm: View {
     @State var data: String = ""
     @State var loading: Bool = false
     @State var error: Error?
+    @State var theme = EditorTheme(text: .init(hex: "#D9D9D9"), insertionPoint: .init(hex: "#D9D9D9"), invisibles: .init(hex: "#424D5B"), background: .init(hex: "#1f2024").withAlphaComponent(0), lineHighlight: .init(hex: "#23252B"), selection: .init(hex: "#D9D9D9"), keywords: .white, commands: .white, types: .systemPink, attributes: .white, variables: .systemIndigo, values: .systemYellow, numbers: .init(hex: "#D0BF69"), strings: .init(hex: "#FC6A5D"), characters: .init(hex: "#D0BF69"), comments: .init(hex: "#73A74E"))
+    
+    @State var font = NSFont.monospacedSystemFont(ofSize: 11, weight: .regular)
+    @State var tabWidth = 4
+    @State var lineHeight = 1.2
     
     
     var body: some View {
-        Form {
+        VStack {
             HStack {
                 Spacer()
                 if loading {
@@ -30,21 +36,28 @@ struct DocumentForm: View {
             }
             
             Text("Document Data")
-            TextEditor(text: $data)
-                .lineLimit(10)
+            CodeEditTextView(
+                $data,
+                language: .json,
+                theme: $theme,
+                font: $font,
+                tabWidth: $tabWidth,
+                lineHeight: $lineHeight
+            )
+            
             
             HStack {
                 Spacer()
                 Button("Submit") {
                     Task{
-                       await submit()
+                        await submit()
                     }
                 }
                 .background(.blue)
             }
         }
         .padding()
-
+        
     }
     
     func submit() async {

@@ -75,7 +75,7 @@ struct DocumentColumn : Codable, Identifiable, Equatable{
 }
 
 
-struct Document: Codable, Identifiable, Equatable {
+struct Document: Codable, Identifiable, Equatable, Hashable {
     var id = UUID()
     var value: JSON
     
@@ -97,5 +97,13 @@ struct Document: Codable, Identifiable, Equatable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(value)
+    }
+    
+    static func == (lhs: Document, rhs: Document) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

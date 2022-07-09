@@ -12,7 +12,7 @@ struct GeneralSettings: View {
     @Binding var primaryKey: String
     
     var body: some View {
-        VStack {
+        Form {
             TextField("Primary Key", text: $primaryKey)
                 .padding()
             Spacer()

@@ -229,6 +229,7 @@ class MeilisearchModel: ObservableObject {
         
         let results = try await meilisearchClient.index(currentIndex.uid).search(.query(keyword))
         self.searchResults = results
+        self.documents = results.hits
     }
     
     /**
@@ -255,10 +256,11 @@ class MeilisearchModel: ObservableObject {
         let task = try await meilisearchClient.index(currentIndex.uid).addDocument(data: content.data(using: .utf8)!)
         let _ = try await meilisearchClient.waitForTask(task: task)
         try await fetchStats()
+        try await fetchDocuments()
     }
     
     /**
-     Add document from content
+     Fetch document from content
      */
     @MainActor
     func fetchDocuments() async throws {
@@ -269,8 +271,33 @@ class MeilisearchModel: ObservableObject {
         guard let currentIndex = currentIndex else {
             return
         }
-        let documents = try await meilisearchClient.index(currentIndex.uid).getDocuments(options: GetParameters(limit: 2))
+        let documents = try await meilisearchClient.index(currentIndex.uid).getDocuments(options: GetParameters(limit: 20))
         self.documents = documents
+    }
+    
+    
+    
+    /**
+     Add document from content
+     */
+    @MainActor
+    func deleteDocument(document: Document, primaryKey: String) async throws {
+        guard let meilisearchClient = meilisearchClient else {
+            return
+        }
+
+        guard let currentIndex = currentIndex else {
+            return
+        }
+        
+        let task = try await meilisearchClient.index(currentIndex.uid).deleteDocument(primaryKey: document.value[primaryKey].stringValue)
+        let _ = try await meilisearchClient.waitForTask(task: task)
+        try await fetchStats()
+        
+        // delete document
+        if let documentIndex = documents.firstIndex(of: document) {
+            documents.remove(at: documentIndex)
+        }
     }
     
 }

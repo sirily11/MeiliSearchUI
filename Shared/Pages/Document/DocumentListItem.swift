@@ -10,9 +10,15 @@ import SwiftyJSON
 import SwiftJSONView
 
 struct DocumentListItem: View {
+    @EnvironmentObject var meilisearchModel: MeilisearchModel
+    
     let columns: [DocumentColumn]
     let data: Document
+    let primaryKey: String
+    
     @State var open = false
+    @State var error: Error?
+    @State var loading = false
     
     func getTitleFromColumns() -> String{
         var title = ""
@@ -37,20 +43,42 @@ struct DocumentListItem: View {
     var body: some View {
         HStack {
             Text("Document: { \(getTitleFromColumns()) }")
+                .lineLimit(1)
             Spacer()
-            Image(systemSymbol: .infoCircleFill)
-                .onTapGesture {
-                    open = true
-                }
-                .popover(isPresented: $open) {
-                    ScrollView{
-                        SwiftJSONView(data: data.value)
+            if loading {
+                ProgressView()
+            } else if let error = error {
+                ErrorPopupIcon(error: error)
+            } else {
+                Image(systemSymbol: .infoCircleFill)
+                    .onTapGesture {
+                        open = true
                     }
-                        .frame(minWidth: 400, minHeight: 500)
-                        .padding()
+                    .popover(isPresented: $open) {
+                        ScrollView{
+                            SwiftJSONView(data: data.value)
+                        }
+                            .frame(minWidth: 400, minHeight: 500)
+                            .padding()
+                    }
+            }
+        }
+        .contextMenu{
+            Button("Delete document") {
+                Task {
+                    await delete()
                 }
+            }
         }
         .padding()
+    }
+    
+    func delete() async {
+        do {
+            try await meilisearchModel.deleteDocument(document: data, primaryKey: primaryKey)
+        } catch let error {
+            self.error = error
+        }
     }
 }
 
@@ -70,6 +98,8 @@ struct DocumentListItem_Previews: PreviewProvider {
                 DocumentColumn(name: "names", value: 1),
                 DocumentColumn(name: "properties", value: 2)
             ],
-            data: Document(value: data))
+            data: Document(value: data),
+            primaryKey: "name"
+        )
     }
 }

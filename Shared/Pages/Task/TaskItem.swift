@@ -14,9 +14,15 @@ struct TaskItem: View {
     var body: some View {
         HStack {
             VStack(alignment:.leading, spacing: 0) {
-                Text(task.indexUid)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
+                HStack {
+                    Text(task.indexUid)
+                        .fontWeight(.bold)
+                        .foregroundColor(.primary)
+                    if let description = task.percentageDescription {
+                        Text(description)
+                            .font(.caption2)
+                    }
+                }
                 if let percentage = task.percentage {
                     ProgressView(value: percentage)
                 }
