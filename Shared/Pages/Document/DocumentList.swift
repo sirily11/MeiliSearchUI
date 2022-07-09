@@ -54,25 +54,28 @@ struct DocumentList: View {
                 Spacer()
             }
             
+            if let searchResult = meilisearchModel.searchResults {
+                HStack {
+                    Text("Total: \(searchResult.nbHits)")
+                        .bold()
+                    Spacer()
+                    Text("Time: \(searchResult.processingTimeMs ?? 0) ms")
+                        .bold()
+                }
+            }
+            
             // show search results
             if let columns = meilisearchModel.stats?.columns {
-                List {
-                    if let searchResult = meilisearchModel.searchResults {
-                        HStack {
-                            Text("Total: \(searchResult.nbHits)")
-                                .bold()
-                            Spacer()
-                            Text("Time: \(searchResult.processingTimeMs ?? 0) ms")
-                                .bold()
+                    Table(meilisearchModel.documents) {
+                        TableColumn("ID") { document in
+                            Text("\(document.value[index.primaryKey ?? ""].stringValue)")
+                        }
+                        .width(200)
+                        
+                        TableColumn("Raw Data") { document in
+                            DocumentListItem(columns: columns, data: document, primaryKey: index.primaryKey ?? "")
                         }
                     }
-                    
-                    ForEach(meilisearchModel.documents) { result in
-                        DocumentListItem(columns: columns, data: result, primaryKey: index.primaryKey ?? "")
-                    }
-                }
-                .listStyle(.inset(alternatesRowBackgrounds: true))
-                .animation(.easeIn, value: 0.6)
                 
             }
         }
